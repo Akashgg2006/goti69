@@ -1,0 +1,12 @@
+<input id="name" placeholder="Enter your name">
+<button onclick="display()">Submit</button>
+
+<div id="output"></div>
+
+<script>
+function display() {
+    let name = document.getElementById("name").value;
+    // ❌ Vulnerable: directly inserting untrusted input into HTML
+    document.getElementById("output").innerHTML = "Hello " + name;
+}
+</script>
